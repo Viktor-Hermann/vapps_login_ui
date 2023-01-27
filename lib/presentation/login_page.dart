@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:vapps_it_login/presentation/widgets/brand_image.dart';
 import 'package:vapps_it_login/presentation/widgets/custom_text_button.dart';
@@ -77,12 +78,17 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 100),
-                Text(' Simple Login UI by VApps-IT ',
+                AnimatedTextKit(repeatForever: true, animatedTexts: [
+                  TyperAnimatedText(
+                    ' Simple Login UI by VApps-IT ',
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                    speed: const Duration(milliseconds: 80),
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.grey.shade400,
-                      fontSize: 14,
-                    )),
+                  )
+                ]),
               ],
             ),
           ),
